@@ -1,0 +1,1 @@
+file -C -m <file_name> //to compile \n file -m to use the compiled magic file
