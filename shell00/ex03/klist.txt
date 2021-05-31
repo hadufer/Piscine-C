@@ -1,0 +1,5 @@
+Credentials cache: API:4474
+        Principal: hadufer@42NICE.FR
+
+  Issued                Expires               Principal
+May 31 12:42:32 2021  May 31 22:42:32 2021  krbtgt/42NICE.FR@42NICE.FR
