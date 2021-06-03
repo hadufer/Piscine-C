@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/02 17:59:03 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/03 11:30:11 by hadufer          ###   ########.fr       */
+/*   Created: 2021/06/03 12:47:14 by hadufer           #+#    #+#             */
+/*   Updated: 2021/06/03 13:21:32 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print_numbers(void)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-	int		i;
-	char	c;
+	int	tmp_a;
+	int	tmp_b;
 
-	i = 0;
-	while (i < 10)
-	{
-		c = '0' + i;
-		write(1, &c, 1);
-		i++;
-	}
-	return ;
+	if (a == 0 || b == 0)
+		return ;
+	tmp_a = *a;
+	tmp_b = *b;
+	if (*b == 0)
+		return ;
+	*a = tmp_a / tmp_b;
+	*b = tmp_a % tmp_b;
 }

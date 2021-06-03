@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/02 17:59:03 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/03 11:30:11 by hadufer          ###   ########.fr       */
+/*   Created: 2021/06/03 15:27:46 by hadufer           #+#    #+#             */
+/*   Updated: 2021/06/03 16:43:39 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print_numbers(void)
+int	ft_strlen(char *str)
 {
-	int		i;
-	char	c;
+	int	length;
 
-	i = 0;
-	while (i < 10)
-	{
-		c = '0' + i;
-		write(1, &c, 1);
-		i++;
-	}
-	return ;
+	length = 0;
+	if (!str)
+		return (0);
+	while (str[length])
+		length++;
+	return (length);
 }

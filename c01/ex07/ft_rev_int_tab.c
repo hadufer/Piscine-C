@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/02 17:59:03 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/03 11:30:11 by hadufer          ###   ########.fr       */
+/*   Created: 2021/06/03 16:44:38 by hadufer           #+#    #+#             */
+/*   Updated: 2021/06/03 17:09:47 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print_numbers(void)
+void	ft_swap(int *a, int *b)
 {
-	int		i;
-	char	c;
+	int	tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
+void	ft_rev_int_tab(int *tab, int size)
+{
+	int	i;
 
 	i = 0;
-	while (i < 10)
+	if (tab == 0 || size <= 0)
+		return ;
+	while (i < (size / 2))
 	{
-		c = '0' + i;
-		write(1, &c, 1);
+		ft_swap(&tab[i], &tab[size - 1 - i]);
 		i++;
 	}
-	return ;
 }

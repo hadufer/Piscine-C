@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/02 17:59:03 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/03 11:30:11 by hadufer          ###   ########.fr       */
+/*   Created: 2021/06/03 16:41:24 by hadufer           #+#    #+#             */
+/*   Updated: 2021/06/03 17:10:34 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print_numbers(void)
+void	ft_rev_int_tab(int *tab, int size)
 {
-	int		i;
-	char	c;
+	int	i;
+	int	tmp;
+	int	reset;
 
 	i = 0;
-	while (i < 10)
+	reset = 0;
+	if (tab == 0 || size <= 0)
+		return ;
+	while (i < size)
 	{
-		c = '0' + i;
-		write(1, &c, 1);
+		if (reset)
+		{
+			reset = 0;
+			i = 0;
+		}
+		if (i + 1 < size && tab[i] > tab[i + 1])
+		{
+			tmp = tab[i];
+			tab[i] = tab[i + 1];
+			tab[i + 1] = tmp;
+			reset = 1;
+		}
 		i++;
 	}
-	return ;
 }

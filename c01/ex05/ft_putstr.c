@@ -1,64 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/02 17:57:39 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/03 11:43:08 by hadufer          ###   ########.fr       */
+/*   Created: 2021/06/03 12:52:53 by hadufer           #+#    #+#             */
+/*   Updated: 2021/06/03 15:27:07 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-	return ;
-}
-
 void	ft_putstr(char *str)
 {
 	int	length;
 
+	if (str == 0)
+		return ;
 	length = 0;
 	while (str[length])
 		length++;
 	write(1, str, length);
-	return ;
-}
-
-void	ft_putnbr_util(int nb, int neg)
-{
-	if (!nb)
-	{
-		if (neg)
-			ft_putchar('-');
-		return ;
-	}
-	ft_putnbr_util(nb / 10, neg);
-	ft_putchar('0' + (nb % 10));
-}
-
-void	ft_putnbr(int nb)
-{
-	int	neg;
-
-	neg = 0;
-	if (nb == -2147483648)
-	{
-		ft_putstr("-2147483648");
-		return ;
-	}
-	else if (nb < 0)
-	{
-		neg = 1;
-		nb *= -1;
-		ft_putnbr_util(nb, neg);
-	}
-	else if (nb == 0)
-		ft_putchar('0');
-	else
-		ft_putnbr_util(nb, neg);
 }
