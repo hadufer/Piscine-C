@@ -1,43 +1,54 @@
 #include <limits.h>
-#include <unistd.h>
-void	ft_putchar(char c)
+
+void	ft_putchar(char c);
+
+int	mini_strncmp(char *str, char *to_cmp, long n)
 {
-	write(1, &c, 1);
+	long	i;
+
+	i = 0;
+	while (i < n)
+	{
+		if (str[i] != to_cmp[i])
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
-int		ft_pow(int i, int pow)
+int	ft_atoi_is_neg_or_max(char *str, long *i, long *neg)
 {
-	while (pow--)
-		i *= i;
-	return i;
+	if (mini_strncmp(str, "2147483647", 10) == 1)
+		return (1);
+	if (str[0] == '-')
+	{
+		*i = 1;
+		*neg = -1;
+	}
+	return (0);
 }
 
 int	ft_atoi(char *str)
 {
-	long int i;
-	long int tmp;
-	long int neg;
+	long int	i;
+	long int	tmp;
+	long int	neg;
 
 	neg = 1;
-	tmp  = 0;
+	tmp = 0;
 	i = 0;
-	if (str == "2147483647")
+	if (ft_atoi_is_neg_or_max(str, &i, &neg) == 1)
 		return (2147483647);
-	if (str[0] == '-')
-	{
-		i++;
-		neg = -1;
-	}
 	while (str[i])
 	{
-		if (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' || 
-			str[i] == '\r'|| str[i] == '\v' || str[i] == '\b' ||
-			str[i] == '\f')
+		if (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
+			|| str[i] == '\r' || str[i] == '\v' || str[i] == '\b'
+			|| str[i] == '\f')
 			i++;
 		else if (str[i] >= '0' && str[i] <= '9')
 			tmp = (str[i] - 48) + (tmp * 10);
 		else
-			return 0;
+			return (0);
 		i++;
 	}
 	return ((int)tmp * neg);
@@ -45,38 +56,36 @@ int	ft_atoi(char *str)
 
 void	rush(int i, int j)
 {
-	long int tmp_i;
-	long int tmp_j;
+	long int	tmp[2];
 
-	tmp_j = 0;
-	tmp_i = 0;
+	tmp[1] = 0;
+	tmp[0] = 0;
 	if (i <= 0 || j <= 0)
 		return ;
-	while (tmp_j < j)
+	while (tmp[1] < j)
 	{
-		tmp_i = 0;
-		while (tmp_i < i)
+		tmp[0] = 0;
+		while (tmp[0] < i)
 		{
-			if (tmp_j == 0 && (tmp_i == 0 || tmp_i == (i - 1)))
+			if (tmp[0] == 0 && (tmp[1] == 0 || tmp[1] == (j - 1)))
 				ft_putchar('A');
-			else if (tmp_j == (j - 1) && (tmp_i == 0 || tmp_i == (i - 1)))
+			else if (tmp[0] == (i - 1) && (tmp[1] == 0 || tmp[1] == (j - 1)))
 				ft_putchar('C');
-			else
+			else if ((tmp[0] == 0 || tmp[1] == 0)
+				|| (tmp[0] == i - 1 || tmp[1] == j - 1))
 				ft_putchar('B');
-			tmp_i++;
+			else
+				ft_putchar(' ');
+			tmp[0]++;
 		}
 		ft_putchar('\n');
-		tmp_j++;
+		tmp[1]++;
 	}
 }
 
 int	main(int argc, char **argv)
 {
-	int rush_choice;
-
-	rush_choice = ft_atoi(argv[3]);
-	if (rush_choice > )
-	if (argc != 4)
+	if (argc != 3)
 		return (-1);
 	rush(ft_atoi(argv[1]), ft_atoi(argv[2]));
 	return (0);
