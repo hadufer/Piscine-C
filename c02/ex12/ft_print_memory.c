@@ -1,7 +1,5 @@
 #include <unistd.h>
 
-#include <stdio.h>
-
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
@@ -41,7 +39,7 @@ void	*ft_print_memory(void *addr, unsigned int size)
 	unsigned char	*beg;
 	unsigned char	*byte;
 	unsigned int	i;
-	unsigned int	k;
+	unsigned int	j;
 
 	i = 0;
 	byte = (unsigned char*)(addr);
@@ -52,15 +50,11 @@ void	*ft_print_memory(void *addr, unsigned int size)
 		write_byte_address_format((size_t)byte, 0);
 		ft_putchar(':');
 		ft_putchar(' ');
-		while ((i < size) && ((i+1) % 17))
+		j = 1;
+		while ((i < size) && j <= 16)
 		{
-			if (i >= 17 && ((i % 16) == 1))
-			{
-				write_byte_hex(*(byte + (i - 1)));
-			}
-			if (i % 16 == 0)
+			if (j == 1)
 				beg = (addr + i);
-			byte = (addr + i);
 			if (*byte)
 				write_byte_hex(*byte);
 			else
@@ -68,16 +62,15 @@ void	*ft_print_memory(void *addr, unsigned int size)
 				ft_putchar('0');
 				ft_putchar('0');
 			}
-			if ((i > 16) && (i % 2 == 0))
+			*byte++;
+			if ((j % 2) == 0)
 				ft_putchar(' ');
-			else if ((i < 17) && (i+1) % 2 == 0)
-				ft_putchar(' ');
+			j++;
 			i++;
 		}
-		if (i > 17 && i % 2 == 0)
+		if (j % 2 == 0)
 			ft_putchar(' ');
-		k = 0;
-		while (beg <= byte)
+		while (beg < byte)
 		{
 			if (*beg >= 0 && *beg <= 31)
 				ft_putchar('.');
@@ -86,6 +79,5 @@ void	*ft_print_memory(void *addr, unsigned int size)
 			beg++;
 		}
 		ft_putchar('\n');
-		i++;
 	}
 }
