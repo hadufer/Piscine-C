@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush03.c                                           :+:      :+:    :+:   */
+/*   rush00.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hadufer <hadufer@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/05 16:58:50 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/06 20:25:02 by hadufer          ###   ########.fr       */
+/*   Created: 2021/06/06 10:54:36 by anggonza          #+#    #+#             */
+/*   Updated: 2021/06/06 20:25:22 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,31 +64,38 @@ int	ft_atoi(char *str)
 	return ((int)tmp * neg);
 }
 
+void	ft_print_tabs(int i, int j, int x, int y)
+{
+	if ((x == 0 || x == i - 1) && (y == 0 || y == j - 1))
+		ft_putchar('o');
+	else if ((x != 0 && x != (x - 1)) && (y == 0 || y == (j - 1)))
+		ft_putchar('-');
+	else if (((x == 0) || (x == (i - 1))) && (y != 0) && (y != (j - 1)))
+		ft_putchar('|');
+	else
+		ft_putchar(' ');
+}
+
 void	rush(int i, int j)
 {
-	long int	tmp[2];
+	int	x;
+	int	y;
 
-	tmp[1] = 0;
-	tmp[0] = 0;
 	if (i <= 0 || j <= 0)
-		return ;
-	while (tmp[1] < j)
 	{
-		tmp[0] = 0;
-		while (tmp[0] < i)
+		return ;
+	}
+	x = 0;
+	y = 0;
+	while (y < j)
+	{
+		x = 0;
+		while (x < i)
 		{
-			if (tmp[0] == 0 && (tmp[1] == 0 || tmp[1] == (j - 1)))
-				ft_putchar('A');
-			else if (tmp[0] == (i - 1) && (tmp[1] == 0 || tmp[1] == (j - 1)))
-				ft_putchar('C');
-			else if ((tmp[0] == 0 || tmp[1] == 0)
-				|| (tmp[0] == i - 1 || tmp[1] == j - 1))
-				ft_putchar('B');
-			else
-				ft_putchar(' ');
-			tmp[0]++;
+			ft_print_tabs(i, j, x, y);
+			x++;
 		}
 		ft_putchar('\n');
-		tmp[1]++;
+		y++;
 	}
 }

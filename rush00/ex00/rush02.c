@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush03.c                                           :+:      :+:    :+:   */
+/*   rush02.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hadufer <hadufer@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/05 16:58:50 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/06 20:25:02 by hadufer          ###   ########.fr       */
+/*   Created: 2021/06/05 16:58:50 by muteza            #+#    #+#             */
+/*   Updated: 2021/06/06 20:25:11 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,25 +64,25 @@ int	ft_atoi(char *str)
 	return ((int)tmp * neg);
 }
 
-void	rush(int i, int j)
+void	rush(int x, int y)
 {
 	long int	tmp[2];
 
 	tmp[1] = 0;
 	tmp[0] = 0;
-	if (i <= 0 || j <= 0)
+	if (x <= 0 || y <= 0)
 		return ;
-	while (tmp[1] < j)
+	while (tmp[1] < y)
 	{
 		tmp[0] = 0;
-		while (tmp[0] < i)
+		while (tmp[0] < x)
 		{
-			if (tmp[0] == 0 && (tmp[1] == 0 || tmp[1] == (j - 1)))
+			if (tmp[1] == 0 && (tmp[0] == 0 || tmp[0] == (x - 1)))
 				ft_putchar('A');
-			else if (tmp[0] == (i - 1) && (tmp[1] == 0 || tmp[1] == (j - 1)))
+			else if (tmp[1] == (y - 1) && (tmp[0] == 0 || tmp[0] == (x - 1)))
 				ft_putchar('C');
 			else if ((tmp[0] == 0 || tmp[1] == 0)
-				|| (tmp[0] == i - 1 || tmp[1] == j - 1))
+				|| (tmp[0] == x - 1 || tmp[1] == y - 1))
 				ft_putchar('B');
 			else
 				ft_putchar(' ');
