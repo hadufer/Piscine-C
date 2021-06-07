@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "ft_strncpy.c"
 
 int main()

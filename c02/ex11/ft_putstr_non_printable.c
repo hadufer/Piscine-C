@@ -6,7 +6,7 @@
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 12:26:34 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/05 15:19:14 by hadufer          ###   ########.fr       */
+/*   Updated: 2021/06/07 11:47:16 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	ft_putstr(char *str)
 {
 	long	length;
 
+	length = 0;
 	while (str[length])
 		length++;
 	write(1, str, length);
