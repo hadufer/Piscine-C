@@ -1,8 +1,8 @@
 #include <stdio.h>
 char	*ft_strcapitalize(char *str);
 
-char str[] = "hELlO mY 42oLd  T .0zac -x  friend hip+bla \nblyat";
+char str[] = "Yb^w#Wn@?Fs+`)$Jct[k#Uhs|E7#!Ck#";
 int main()
 {
-	printf("%s\n", ft_strcapitalize(str));
+	printf("%s", ft_strcapitalize(str));
 }

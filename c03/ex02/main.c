@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 char *ft_strcat(char *dest, const char *src);
 
 int main()

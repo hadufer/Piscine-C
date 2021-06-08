@@ -1,40 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/08 14:37:41 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/08 14:41:36 by hadufer          ###   ########.fr       */
+/*   Created: 2021/06/08 14:35:12 by hadufer           #+#    #+#             */
+/*   Updated: 2021/06/08 15:35:42 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+int	ft_strlen(char *str)
+{
+	int	length;
+
+	length = 0;
+	while (str[length])
+		length++;
+	return (length);
+}
+
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
+	char			*tmp_1;
+	char			*tmp_2;
 	unsigned int	i;
-	char			*tmp[2];
 
+	tmp_1 = s1;
+	tmp_2 = s2;
 	i = 0;
-	tmp[0] = s1;
-	tmp[1] = s2;
-	if (n == 0)
-		return (0);
-	while (i < n)
+	while ((*tmp_2 && *tmp_1) && (i < n))
 	{
-		while (*tmp[0])
-		{
-			if (*tmp[1] == 0)
-				return (1);
-			if (*tmp[1] > *tmp[0])
-				return (-1);
-			if (*tmp[0] > *tmp[1])
-				return (1);
-			tmp[0]++;
-			tmp[1]++;
-		}
+		if (*tmp_2 == 0 && *tmp_1 == 0)
+			return (*tmp_1 - *tmp_2);
+		if (*tmp_2 > *tmp_1)
+			return (*tmp_1 - *tmp_2);
+		if (*tmp_2 < *tmp_1)
+			return (*tmp_1 - *tmp_2);
+		tmp_1++;
+		tmp_2++;
+		i++;
 	}
-	if (*tmp[1] != 0)
-		return (-1);
-	return (0);
+	return (*tmp_1 - *tmp_2);
 }
