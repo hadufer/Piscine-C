@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/08 14:35:12 by hadufer           #+#    #+#             */
+/*   Updated: 2021/06/08 14:37:12 by hadufer          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int	ft_strlen(char *str)
 {
-	int length;
+	int	length;
 
 	length = 0;
 	while (str[length])
@@ -8,7 +20,8 @@ int	ft_strlen(char *str)
 	return (length);
 }
 
-int ft_strcmp(char *s1, char *s2){
+int	ft_strcmp(char *s1, char *s2)
+{
 	char	*tmp_1;
 	char	*tmp_2;
 
@@ -27,5 +40,5 @@ int ft_strcmp(char *s1, char *s2){
 	}
 	if (*tmp_2 != 0)
 		return (-1);
-	return 0;
+	return (0);
 }

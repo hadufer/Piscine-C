@@ -1,28 +1,40 @@
-int ft_strncmp(char *s1, char *s2, unsigned int n){
-	char			*tmp_1;
-	char			*tmp_2;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/06/08 14:37:41 by hadufer           #+#    #+#             */
+/*   Updated: 2021/06/08 14:41:36 by hadufer          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
+{
 	unsigned int	i;
+	char			*tmp[2];
 
 	i = 0;
-	tmp_1 = s1;
-	tmp_2 = s2;
+	tmp[0] = s1;
+	tmp[1] = s2;
 	if (n == 0)
 		return (0);
 	while (i < n)
 	{
-		while (*tmp_1)
+		while (*tmp[0])
 		{
-			if (*tmp_2 == 0)
+			if (*tmp[1] == 0)
 				return (1);
-			if (*tmp_2 > *tmp_1)
+			if (*tmp[1] > *tmp[0])
 				return (-1);
-			if (*tmp_1 > *tmp_2)
+			if (*tmp[0] > *tmp[1])
 				return (1);
-			tmp_1++;
-			tmp_2++;
+			tmp[0]++;
+			tmp[1]++;
 		}
 	}
-	if (*tmp_2 != 0)
-			return (-1);
-	return 0;
+	if (*tmp[1] != 0)
+		return (-1);
+	return (0);
 }

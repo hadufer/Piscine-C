@@ -6,16 +6,16 @@
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/04 09:49:24 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/07 11:38:55 by hadufer          ###   ########.fr       */
+/*   Updated: 2021/06/08 15:02:44 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
 	int	length;
 
 	length = 0;
-	while(str[length])
+	while (str[length])
 		length++;
 	return (length);
 }
