@@ -16,6 +16,6 @@ int main()
 	printf("ft_strlcpy == %u \n", ft_strlcpy(a, b, size));
 	printf("ft_strlcpy AFTER %s %s \n", a, b);
 	printf("strlcpy BEFORE %s %s \n", d, e);
-	printf("strlcpy == %lu \n",  strlcpy(d, e, size));
+	printf("strlcpy == %u \n",  strlcpy(d, e, size));
 	printf("strlcpy AFTER %s %s \n", d, e);
 }
