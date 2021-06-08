@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include "ft_strncpy.c"
+
+char	*ft_strncpy(char *str, char *str2, int a);
 
 int main()
 {

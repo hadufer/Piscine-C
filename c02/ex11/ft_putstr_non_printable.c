@@ -6,7 +6,7 @@
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 12:26:34 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/07 11:47:16 by hadufer          ###   ########.fr       */
+/*   Updated: 2021/06/08 13:18:44 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ void	ft_putstr_non_printable(char *str)
 		if (str[i] >= 1 && str[i] <= 31)
 		{
 			ft_putchar('\\');
-			ft_putchar('0');
+			if (str[i] < 16)
+				ft_putchar('0');
 			ft_putchar_hex(str[i]);
 		}
 		else
