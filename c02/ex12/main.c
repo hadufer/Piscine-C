@@ -7,5 +7,5 @@ int	main(void)
 	char *test;
 	asprintf(&test,"ab%cdefghijk mnopqrstuvwxyz", 29);
 	//printf("%s\n", test);
-	ft_print_memory(test, 34);
+	ft_print_memory(test, 9);
 }

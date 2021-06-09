@@ -6,7 +6,7 @@
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 14:26:01 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/09 14:59:02 by hadufer          ###   ########.fr       */
+/*   Updated: 2021/06/09 18:26:40 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,12 @@ void	ft_putnbr_rec(int nb)
 	{
 		ft_putchar('-');
 		nb *= -1;
+		ft_putnbr_rec(nb / 10);
 	}
 	else
 	{
-		ft_putchar('0' + nb % 10);
 		ft_putnbr_rec(nb / 10);
+		ft_putchar('0' + (nb % 10));
 	}
 	return ;
 }

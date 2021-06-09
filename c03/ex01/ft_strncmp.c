@@ -6,7 +6,7 @@
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 14:35:12 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/09 16:40:51 by hadufer          ###   ########.fr       */
+/*   Updated: 2021/06/09 17:20:50 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,8 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	tmp_1 = s1;
 	tmp_2 = s2;
 	i = 0;
-	// cas derreur if s1 = '1' && !s2 et inversement
 	if (!s1 || !s2 || !n)
-		return (ft_strlen(s2));
+		return (n);
 	while ((*tmp_1 && *tmp_2) && (i < n))
 	{
 		if (*tmp_2 == 0 && *tmp_1 == 0)

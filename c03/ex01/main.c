@@ -6,8 +6,8 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n);
 
 int	main()
 {
-	char *test1 = strdup("");
-	char *test2 = strdup("1");
+	char *test1 = strdup("1");
+	char *test2 = strdup("");
 	unsigned int size = 0;
 
 	char *test3 = strdup(test1);

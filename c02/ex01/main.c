@@ -3,16 +3,14 @@
 #include <stdlib.h>
 char	*ft_strncpy(char *str, char *str2, int a);
 
-int main(int argc, char **argv)
+int main()
 {
-	char *a = strdup(argv[1]);
-	char *b = strdup(argv[2]);
-	unsigned int size = atoi(argv[3]);
+	char *a = strdup("abcde");
+	char *b = strdup("0123");
+	unsigned int size = 3;
 	char *c = strdup(a);
 	char *d = strdup(b);
 
-	if (argc != 4)
-		return (0);
 	printf("ft_strncpy || %s, %s\n",a ,b);
 	ft_strncpy(a, b, size);
 	printf("ft_strncpy || %s, %s\n", a, b);
