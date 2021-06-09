@@ -6,7 +6,7 @@
 /*   By: hadufer <hadufer@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/05 12:26:34 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/08 22:41:58 by hadufer          ###   ########.fr       */
+/*   Updated: 2021/06/09 08:32:14 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_putchar_hex(char c)
+void	ft_putchar_hex(unsigned char c)
 {
 	if (!c)
 		return ;
@@ -40,9 +40,9 @@ void	ft_putstr_non_printable(char *str)
 		else
 		{
 			ft_putchar('\\');
-			if (str[i] < 16)
+			if (str[i] < 16 && str[i] > 0)
 				ft_putchar('0');
-			ft_putchar_hex(str[i]);
+			ft_putchar_hex((unsigned char)str[i]);
 		}
 		i++;
 	}
