@@ -6,9 +6,9 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n);
 
 int	main()
 {
-	char test1[] = "BB";
-	char test2[] = "BBC";
-	unsigned int size = 3;
+	char *test1 = strdup("");
+	char *test2 = strdup("1");
+	unsigned int size = 0;
 
 	char *test3 = strdup(test1);
 	char *test4 = strdup(test2);

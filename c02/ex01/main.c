@@ -8,10 +8,11 @@ int main(int argc, char **argv)
 	char *a = strdup(argv[1]);
 	char *b = strdup(argv[2]);
 	unsigned int size = atoi(argv[3]);
-
 	char *c = strdup(a);
 	char *d = strdup(b);
 
+	if (argc != 4)
+		return (0);
 	printf("ft_strncpy || %s, %s\n",a ,b);
 	ft_strncpy(a, b, size);
 	printf("ft_strncpy || %s, %s\n", a, b);

@@ -6,7 +6,7 @@
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 16:20:55 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/08 16:39:46 by hadufer          ###   ########.fr       */
+/*   Updated: 2021/06/09 09:22:55 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_strstr(char *str, char *to_find)
 	{
 		j = 0;
 		tmp_i = i;
-		while (to_find[j] == str[tmp_i])
+		while (to_find[j] && (to_find[j] == str[tmp_i]))
 		{
 			tmp_i++;
 			j++;

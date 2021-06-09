@@ -6,7 +6,7 @@ int	ft_strcmp(char *s1, char *s2);
 int	main()
 {
 	char test1[] = "aa";
-	char test2[] = "aaa";
+	char test2[] = "";
 
 	char *test3 = strdup(test1);
 	char *test4 = strdup(test2);

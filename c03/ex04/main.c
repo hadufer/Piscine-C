@@ -6,8 +6,8 @@ char	*ft_strstr(char *str, char *to_find);
 
 int main()
 {
-	char test1[] = "abcdefg";
-	char test2[] = "g";
+	char test1[] = "ababcabc";
+	char test2[] = "ab";
 
 	char *test3 = strdup(test1);
 	char *test4 = strdup(test2);

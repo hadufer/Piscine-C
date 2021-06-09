@@ -7,7 +7,7 @@ int main()
 {
 	char test1[10] = "bbb";
 	char test2[] = "123";
-	unsigned int size = 1;
+	unsigned int size = 5;
 
 	char *test3 = strdup(test1);
 	char *test4 = strdup(test2);
