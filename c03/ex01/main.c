@@ -6,10 +6,12 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n);
 
 int	main()
 {
-	char *test1 = strdup("1");
-	char *test2 = strdup("");
-	unsigned int size = 1;
+	char *test1;
+	char *test2;
+	unsigned int size = 3;
 
+	asprintf(&test1, "%c", '\200');
+	asprintf(&test2, "%c", '\0');
 	char *test3 = strdup(test1);
 	char *test4 = strdup(test2);
 	printf("strncmp = %s test2 = %s result = %d\n", test1, test2, strncmp(test1, test2, size));

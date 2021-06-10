@@ -6,22 +6,28 @@
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/08 14:35:12 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/10 10:52:32 by hadufer          ###   ########.fr       */
+/*   Updated: 2021/06/10 12:25:46 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	i;
+	unsigned char	cmp_1;
+	unsigned char	cmp_2;
 
 	i = 0;
-	if (!s1 || !s2 || !n)
+	if (!n)
 		return (n);
+	cmp_1 = (unsigned char)s1[i];
+	cmp_2 = (unsigned char)s2[i];
 	while ((s1[i] && s2[i]) && (i < n))
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+		cmp_1 = (unsigned char)s1[i];
+		cmp_2 = (unsigned char)s2[i];
+		if (cmp_1 != cmp_2)
+			return (cmp_1 - cmp_2);
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	return (cmp_1 - cmp_2);
 }
