@@ -8,7 +8,7 @@ int	main()
 {
 	char *test1;
 	char *test2;
-	unsigned int size = 8;
+	unsigned int size = 20;
 
 	asprintf(&test1, "abcde%c", '\200');
 	asprintf(&test2, "abcde%c", '\0');
