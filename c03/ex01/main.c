@@ -8,7 +8,7 @@ int	main()
 {
 	char *test1 = strdup("1");
 	char *test2 = strdup("");
-	unsigned int size = 0;
+	unsigned int size = 1;
 
 	char *test3 = strdup(test1);
 	char *test4 = strdup(test2);
