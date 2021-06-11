@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/10 18:32:33 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/11 09:34:57 by hadufer          ###   ########.fr       */
+/*   Created: 2021/06/11 11:54:29 by hadufer           #+#    #+#             */
+/*   Updated: 2021/06/11 12:15:03 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_power(int nb, int power)
-{
-	int	tmp;
+int	**ft_ten_queens_puzzle(int tab[][10]);
+#include <stdio.h>
 
-	tmp = nb;
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	while (power-- > 1)
-		nb *= tmp;
-	return (nb);
+int main()
+{
+	int i = 0;
+	int j = 0;
+	int tab[10][10];
+	ft_ten_queens_puzzle(tab);
+	while (i <= 9)
+	{
+		while (j <= 9)
+		{
+			printf("%d ", tab[i][j]);
+			j++;
+		}
+		printf("\n");
+		i++;
+	}
 }

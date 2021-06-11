@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_power.c                               :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/10 18:32:33 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/11 09:34:57 by hadufer          ###   ########.fr       */
+/*   Created: 2021/06/11 10:01:26 by hadufer           #+#    #+#             */
+/*   Updated: 2021/06/11 10:20:43 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_power(int nb, int power)
-{
-	int	tmp;
+#include <stdio.h>
+int	ft_is_prime(int nb);
 
-	tmp = nb;
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	while (power-- > 1)
-		nb *= tmp;
-	return (nb);
+int main()
+{
+	int nb = 5;
+	printf("%d is prime ? (0 == no || 1 == yes) %d \n", nb, ft_is_prime(nb));
 }
