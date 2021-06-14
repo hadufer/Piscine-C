@@ -5,15 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/11 10:34:52 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/11 10:45:36 by hadufer          ###   ########.fr       */
+/*   Created: 2021/06/14 12:26:28 by hadufer           #+#    #+#             */
+/*   Updated: 2021/06/14 15:41:05 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-int	ft_find_next_prime(int nb);
 
-int main()
+#include <stdio.h>
+#include <limits.h>
+int	ft_find_next_prime(int nb);
+int	main()
 {
-	int nb = 11;
-	printf("%d\n", ft_find_next_prime(nb));
+	int	nb = INT_MIN;
+
+	printf("%d\n",ft_find_next_prime(nb));
 }

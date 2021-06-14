@@ -6,22 +6,24 @@
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 09:54:29 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/11 10:16:44 by hadufer          ###   ########.fr       */
+/*   Updated: 2021/06/14 10:44:36 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_prime_rec(int curr, int nb)
-{
-	if (curr == nb)
-		return (1);
-	if (((nb % curr) == 0) && (curr != 1))
-		return (0);
-	return (ft_is_prime_rec(curr + 1, nb));
-}
-
 int	ft_is_prime(int nb)
 {
+	int	curr;
+
+	curr = 2;
 	if (nb <= 1)
 		return (0);
-	return (ft_is_prime_rec(1, nb));
+	while (curr <= nb)
+	{
+		if (curr == nb)
+			return (1);
+		if ((nb % curr) == 0)
+			return (0);
+		curr++;
+	}
+	return (0);
 }

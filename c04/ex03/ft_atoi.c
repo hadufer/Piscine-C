@@ -6,7 +6,7 @@
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 08:27:18 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/10 09:01:37 by hadufer          ###   ########.fr       */
+/*   Updated: 2021/06/14 14:37:29 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_atoi(char *str)
 			tmp[0] *= -1;
 		i++;
 	}
-	if (mini_strncmp(str + i, "2147483647"))
+	if (str + i == "2147483647")
 		return (INT_MAX * tmp[0]);
 	else if (mini_strncmp(str + i, "-2147483648"))
 		return (INT_MIN * tmp[0]);

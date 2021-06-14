@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/11 10:01:26 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/14 15:13:10 by hadufer          ###   ########.fr       */
+/*   Created: 2021/06/14 08:34:35 by hadufer           #+#    #+#             */
+/*   Updated: 2021/06/14 08:40:50 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <limits.h>
-int	ft_is_prime(int nb);
+#include <unistd.h>
 
-int main()
+void	ft_putstr(char *str)
 {
-	//int	test = 1;
-	int nb = 8;
-	printf("%d is prime ? (0 == no || 1 == yes) %d \n", nb, ft_is_prime(nb));
-//	while (test <=  INT_MAX)
-//	{
-//		printf("%d -> %d\n", test, ft_is_prime(test));
-//		test++;
-//	}
+	int	length;
+
+	length = 0;
+	while (str[length])
+		length++;
+	write(1, str, length);
+}
+
+int	main(int argc, char **argv)
+{
+	int	i;
+
+	i = 1;
+	if (argc < 2)
+		return (0);
+	while (i < argc)
+	{
+		ft_putstr(argv[i]);
+		ft_putstr("\n");
+		i++;
+	}
+	return (0);
 }
