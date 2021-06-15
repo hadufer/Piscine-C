@@ -1,43 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/14 14:58:02 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/15 09:08:30 by hadufer          ###   ########.fr       */
+/*   Created: 2021/06/15 08:32:45 by hadufer           #+#    #+#             */
+/*   Updated: 2021/06/15 11:56:07 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_strlen(char *str)
+long	ft_rangelen(int min, int max)
 {
-	int	length;
-
-	length = 0;
-	while (str[length])
-		length++;
-	return (length);
-}
-
-char	*ft_strdup(char *src)
-{
-	char	*dup;
-	int		length;
-	int		i;
+	long	i;
+	long	l_min;
+	long	l_max;
 
 	i = 0;
-	length = ft_strlen(src) + 1;
-	dup = malloc(length * sizeof(char));
-	if (dup == NULL)
-		return (NULL);
-	while (i < length)
+	l_min = min;
+	l_max = max;
+	while (l_min < l_max)
 	{
-		dup[i] = src[i];
 		i++;
+		l_min++;
 	}
-	dup[i] = 0;
-	return (dup);
+	return (i);
+}
+
+int	*ft_range(int min, int max)
+{
+	int		*ret;
+	long	length;
+	long	i;
+	long	l_min;
+
+	i = 0;
+	l_min = min;
+	if (min >= max)
+		return (NULL);
+	length = ft_rangelen(min, max);
+	ret = malloc(length * sizeof(int));
+	while (i <= length)
+	{
+		ret[i] = l_min;
+		i++;
+		l_min++;
+	}
+	return (ret);
 }

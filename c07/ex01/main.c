@@ -1,43 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/14 14:58:02 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/15 09:08:30 by hadufer          ###   ########.fr       */
+/*   Created: 2021/06/15 08:42:30 by hadufer           #+#    #+#             */
+/*   Updated: 2021/06/15 09:06:40 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <stdio.h>
 
-int	ft_strlen(char *str)
+int	*ft_range(int min, int max);
+long	ft_rangelen(int min, int max);
+int	main()
 {
-	int	length;
-
-	length = 0;
-	while (str[length])
-		length++;
-	return (length);
-}
-
-char	*ft_strdup(char *src)
-{
-	char	*dup;
-	int		length;
-	int		i;
+	long	i;
+	long	length;
+	int		*tab;
+	int		a;
+	int		b;
 
 	i = 0;
-	length = ft_strlen(src) + 1;
-	dup = malloc(length * sizeof(char));
-	if (dup == NULL)
-		return (NULL);
+	a = -2121212;
+	b = 32131312;
+	length = ft_rangelen(a, b);
+	tab = ft_range(a, b);
 	while (i < length)
 	{
-		dup[i] = src[i];
+		printf("%d\n", tab[i]);
 		i++;
 	}
-	dup[i] = 0;
-	return (dup);
 }
