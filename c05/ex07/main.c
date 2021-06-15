@@ -6,7 +6,7 @@
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 12:26:28 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/14 15:41:05 by hadufer          ###   ########.fr       */
+/*   Updated: 2021/06/15 11:23:53 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_find_next_prime(int nb);
 int	main()
 {
-	int	nb = INT_MIN;
+	int	nb = 0;
 
 	printf("%d\n",ft_find_next_prime(nb));
 }
