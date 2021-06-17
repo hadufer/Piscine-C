@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/17 09:19:37 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/17 17:43:42 by hadufer          ###   ########.fr       */
+/*   Created: 2021/06/17 17:03:55 by hadufer           #+#    #+#             */
+/*   Updated: 2021/06/17 17:14:52 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-
-char	**ft_split(char *str, char *charset);
-
-int	main()
-{
-	int	i;
-	char	*str = "sadasdasd s sda ds n";
-	char	*charset = ",";
-
-	i = 0;
-	char **tab = ft_split(str, charset);
-	while (tab[i])
-	{
-		printf("%s\n", tab[i]);
-		i++;
-	}
-	free(tab);
-}
+#ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H
+# include <unistd.h>
+# define EVEN(x) (x % 2 == 1)
+# define TRUE 1
+# define FALSE 0
+# define EVEN_MSG "I have an even number of arguments.\n"
+# define ODD_MSG "I have an odd number of arguments.\n"
+# define SUCCESS 1
+typedef int	t_bool;
+#endif

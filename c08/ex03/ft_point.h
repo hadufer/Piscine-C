@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/17 09:19:37 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/17 17:43:42 by hadufer          ###   ########.fr       */
+/*   Created: 2021/06/17 18:21:09 by hadufer           #+#    #+#             */
+/*   Updated: 2021/06/17 18:24:08 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
+#ifndef FT_POINT_H
+# define FT_POINT_H
 
-char	**ft_split(char *str, char *charset);
+typedef struct s_point {
+	int			x;
+	int			y;
+}				t_point;
 
-int	main()
-{
-	int	i;
-	char	*str = "sadasdasd s sda ds n";
-	char	*charset = ",";
-
-	i = 0;
-	char **tab = ft_split(str, charset);
-	while (tab[i])
-	{
-		printf("%s\n", tab[i]);
-		i++;
-	}
-	free(tab);
-}
+#endif
