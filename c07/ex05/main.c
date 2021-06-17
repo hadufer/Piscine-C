@@ -5,17 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/15 15:48:48 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/17 11:27:07 by hadufer          ###   ########.fr       */
+/*   Created: 2021/06/17 09:19:37 by hadufer           #+#    #+#             */
+/*   Updated: 2021/06/17 15:40:34 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
 
-char	*ft_strjoin(int size, char **strs, char *sep);
+char	**ft_split(char *str, char *charset);
 
-int main(int argc, char **argv)
+int	main()
 {
-	char *c = "669";
-	printf("%s\n", ft_strjoin(argc - 1, argv + 1, c));
+	int	i;
+	char	*str = "n";
+	char	*charset = " ";
+
+	i = 0;
+	char **tab = ft_split(str, charset);
+	while (tab[i])
+	{
+		printf("%s\n", tab[i]);
+		i++;
+	}
+	free(tab);
 }

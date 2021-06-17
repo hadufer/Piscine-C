@@ -6,14 +6,13 @@
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/16 08:24:26 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/16 18:36:45 by hadufer          ###   ########.fr       */
+/*   Updated: 2021/06/17 08:56:28 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
 int	parse_base(char *str);
-
 int	ft_atoi_base(char *str, char *base);
 
 long	ft_strlen(char *str)
@@ -26,35 +25,53 @@ long	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_ltoa_base(long nbr, char *base)
+void	ft_ltoa_util(long *nbr, char *base, int *sign, long *i)
 {
-	long			base_l;
-	long			tmp_nbr;
-	char			*str;
-	int				sign;
-	long			i;
+	long	base_l;
+	long	tmp_nbr;
+	long	j;
 
-	tmp_nbr = nbr;
-	i = 0;
-	sign = 0;
+	tmp_nbr = *nbr;
+	j = 0;
 	base_l = ft_strlen(base);
-	if (nbr < 0)
+	if (*nbr < 0)
 	{
-		nbr *= -1;
-		sign = -1;
+		*nbr *= -1;
+		*sign = -1;
 	}
 	while (tmp_nbr)
 	{
 		tmp_nbr /= base_l;
-		i++;
+		j++;
 	}
-	str = malloc(sizeof(char) * (i + 1 - sign));
+	*i = j;
+}
+
+char	*nbr_zero_handle(long nbr, char *base, long base_l, char *str)
+{
 	if (!nbr)
 	{
 		str[0] = base[nbr % base_l];
 		str[1] = 0;
 		return (str);
 	}
+	return (NULL);
+}
+
+char	*ft_ltoa_base(long nbr, char *base)
+{
+	long			base_l;
+	char			*str;
+	int				sign;
+	long			i;
+
+	i = 0;
+	sign = 0;
+	base_l = ft_strlen(base);
+	ft_ltoa_util(&nbr, base, &sign, &i);
+	str = malloc(sizeof(char) * (i + 1 - sign));
+	if (nbr_zero_handle(nbr, base, base_l, str))
+		return (str);
 	if (sign)
 		str[0] = '-';
 	i -= sign;
