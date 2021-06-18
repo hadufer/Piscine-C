@@ -6,7 +6,7 @@
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 10:22:52 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/18 10:40:52 by hadufer          ###   ########.fr       */
+/*   Updated: 2021/06/18 13:03:23 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_putnbr(long nbr)
 	else
 	{
 		ft_putnbr(nbr / 10);
-		ft_putchar(nbr + '0');
+		ft_putchar((nbr % 10) + '0');
 	}
 }
 
@@ -44,7 +44,7 @@ void	ft_show_tab(struct s_stock_str *par)
 	int	i;
 
 	i = 0;
-	while (par[i].str)
+	while (par && par[i].str)
 	{
 		ft_putstr(par[i].str);
 		ft_putchar('\n');
