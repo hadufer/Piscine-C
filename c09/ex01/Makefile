@@ -5,33 +5,39 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hadufer <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/06/18 11:05:09 by hadufer           #+#    #+#              #
-#    Updated: 2021/06/22 17:13:53 by hadufer          ###   ########.fr        #
+#    Created: 2021/06/22 18:29:09 by hadufer           #+#    #+#              #
+#    Updated: 2021/06/22 18:29:11 by hadufer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
-BIN = libft.a
-SRC = $(wildcard srcs/*.c)
-OBJ = $(SRC:.c=.o)
-HEADER = includes/
+NAME	= libft.a
+
+SRCS	= srcs/ft_putchar.c srcs/ft_putstr.c srcs/ft_strcmp.c srcs/ft_strlen.c srcs/ft_swap.c
+
+OBJS	= ${SRCS:.c=.o}
+
+HEADER	= includes
+
+CC		= gcc
+RM		= rm -f
+AR		= ar rcs
+
 CFLAGS = -Wall -Wextra -Werror
 
-.PHONY: all clean fclean re $(BIN)
+%.o: %.c
+			${CC} -c ${CFLAGS} -o $@ $< -I ${HEADER}
 
-all: $(BIN)
+${NAME}:	${OBJS}
+			${AR} ${NAME} ${OBJS}
 
-$(BIN): $(OBJ)
-	ar -rcs $(BIN) $(OBJ)
+all:	${NAME}
 
 clean:
-	rm -f $(OBJ)
+		${RM} ${OBJS}
 
-fclean: clean
-	rm -f $(BIN)
+fclean:	clean
+		${RM} ${NAME}
 
-re: fclean all
+re:		fclean all
 
-%.o: %.c
-	$(CC) -I$(HEADER) -c $(CFLAGS) $< -o $@
-
+.PHONY:	all clean fclean re
