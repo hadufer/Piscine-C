@@ -6,7 +6,7 @@
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 09:19:37 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/21 20:47:29 by hadufer          ###   ########.fr       */
+/*   Updated: 2021/06/22 09:14:02 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	**ft_split(char *str, char *charset);
 int	main()
 {
 	int	i;
-	char	*str = "sadasdasd s sda ds n";
+	char	*str = "bonjour hassan";
 	char	*charset = "";
 
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 08:57:25 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/17 16:01:58 by hadufer          ###   ########.fr       */
+/*   Updated: 2021/06/22 08:50:36 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ int	count_word(char *str, char *charset)
 	count = 0;
 	while (str[i])
 	{
-		if (find_c(charset, str[i]) == -1)
+		if (str[i] && find_c(charset, str[i]) == -1)
 		{
 			count++;
-			while (find_c(charset, str[i]) == -1)
+			while (str[i] && find_c(charset, str[i]) == -1)
 				i++;
 		}
 		else

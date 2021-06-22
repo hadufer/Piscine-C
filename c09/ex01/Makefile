@@ -6,26 +6,32 @@
 #    By: hadufer <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/18 11:05:09 by hadufer           #+#    #+#              #
-#    Updated: 2021/06/21 20:24:40 by hadufer          ###   ########.fr        #
+#    Updated: 2021/06/22 11:49:38 by hadufer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
+BIN = libft.a
 SRC = $(wildcard srcs/*.c)
 OBJ = $(SRC:.c=.o)
-HEADER = $(wildcard includes/*.h)
+HEADER = includes/
 CFLAGS = -Wall -Wextra -Werror
 
-all: $(OBJ)
+.PHONY: all clean fclean re $(BIN)
+
+all: libft.a
+
+libft.a: $(OBJ)
 	ar -rcs libft.a $(OBJ)
+
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(BIN)
 
 re: fclean all
 
-clean:
-	rm $(OBJ)
+%.o: %.c
+	$(CC) -I$(HEADER) -c $(CFLAGS) $< -o $@
 
-fclean: clean
-	rm libft.a
-
-%.o: $.c
-	$(CC) $(CFLAGS) $(OBJ) -c -o $@ $< -I$(HEADER)

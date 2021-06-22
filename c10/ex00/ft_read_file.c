@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_read_file.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/17 09:19:37 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/22 09:14:02 by hadufer          ###   ########.fr       */
+/*   Created: 2021/06/22 10:21:05 by hadufer           #+#    #+#             */
+/*   Updated: 2021/06/22 10:45:30 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "ft_read_file.h"
+#include "utils.h"
+#include <fcntl.h>
 #include <unistd.h>
-#include <stdlib.h>
 
-char	**ft_split(char *str, char *charset);
-
-int	main()
+int	ft_read_file(int fd)
 {
-	int	i;
-	char	*str = "bonjour hassan";
-	char	*charset = "";
+	char	buf[1];
+	int		n_read;
 
-	i = 0;
-	char **tab = ft_split(str, charset);
-	while (tab[i])
+	while ((n_read = read(fd, buf, 1) > 0))
 	{
-		printf("%s\n", tab[i]);
-		i++;
+		ft_putchar(buf[0]);
 	}
-	free(tab);
+	return (n_read);
 }

@@ -1,33 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/17 09:19:37 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/22 09:14:02 by hadufer          ###   ########.fr       */
+/*   Created: 2021/06/22 10:34:39 by hadufer           #+#    #+#             */
+/*   Updated: 2021/06/22 10:39:43 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-
-char	**ft_split(char *str, char *charset);
-
-int	main()
-{
-	int	i;
-	char	*str = "bonjour hassan";
-	char	*charset = "";
-
-	i = 0;
-	char **tab = ft_split(str, charset);
-	while (tab[i])
-	{
-		printf("%s\n", tab[i]);
-		i++;
-	}
-	free(tab);
-}
+#ifndef UTILS_H
+# define UTILS_H
+void	ft_putchar(char c);
+void	ft_putstr(char *str, int out);
+#endif

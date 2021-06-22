@@ -5,29 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/17 09:19:37 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/22 09:14:02 by hadufer          ###   ########.fr       */
+/*   Created: 2021/06/22 10:06:11 by hadufer           #+#    #+#             */
+/*   Updated: 2021/06/22 10:47:36 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
+#include "ft_read_file.h"
+#include "utils.h"
+#include <fcntl.h>
 
-char	**ft_split(char *str, char *charset);
-
-int	main()
+int	main(int argc, char **argv)
 {
-	int	i;
-	char	*str = "bonjour hassan";
-	char	*charset = "";
+	int	fd;
 
-	i = 0;
-	char **tab = ft_split(str, charset);
-	while (tab[i])
+	if (argc < 2)
 	{
-		printf("%s\n", tab[i]);
-		i++;
+		ft_putstr("File name missing.", 2);
+		return (0);
 	}
-	free(tab);
+	else if (argc > 3)
+	{
+		ft_putstr("Too many arguments.", 2);
+		return (0);
+	}
+	fd = open(argv[1], O_RDONLY);
+	if (ft_read_file(fd) < 0)
+	{
+		ft_putstr("Cannot read file.", 2);
+	}
+	return (0);
 }

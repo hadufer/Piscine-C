@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/17 09:19:37 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/22 09:14:02 by hadufer          ###   ########.fr       */
+/*   Created: 2021/06/22 10:33:12 by hadufer           #+#    #+#             */
+/*   Updated: 2021/06/22 10:48:30 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
-#include <stdlib.h>
 
-char	**ft_split(char *str, char *charset);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
-int	main()
+void	ft_putstr(char *str, int out)
 {
 	int	i;
-	char	*str = "bonjour hassan";
-	char	*charset = "";
 
 	i = 0;
-	char **tab = ft_split(str, charset);
-	while (tab[i])
-	{
-		printf("%s\n", tab[i]);
+	while (str[i])
 		i++;
-	}
-	free(tab);
+	write(out, str, i);
 }
