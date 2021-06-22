@@ -6,7 +6,7 @@
 #    By: hadufer <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/18 11:05:09 by hadufer           #+#    #+#              #
-#    Updated: 2021/06/22 11:49:38 by hadufer          ###   ########.fr        #
+#    Updated: 2021/06/22 17:13:53 by hadufer          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,10 @@ CFLAGS = -Wall -Wextra -Werror
 
 .PHONY: all clean fclean re $(BIN)
 
-all: libft.a
+all: $(BIN)
 
-libft.a: $(OBJ)
-	ar -rcs libft.a $(OBJ)
+$(BIN): $(OBJ)
+	ar -rcs $(BIN) $(OBJ)
 
 clean:
 	rm -f $(OBJ)
