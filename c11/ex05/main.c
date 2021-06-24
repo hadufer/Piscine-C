@@ -6,7 +6,7 @@
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 12:01:36 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/24 15:02:55 by hadufer          ###   ########.fr       */
+/*   Updated: 2021/06/24 17:05:32 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,7 @@ int	check_operator(char *op_str)
 int	main_util(int ac, char **av, int *op)
 {
 	if (ac != 4)
-	{
-		ft_putstr("\n", 1);
 		return (0);
-	}
 	*op = check_operator(av[2]);
 	if (*op == -1)
 	{

@@ -6,7 +6,7 @@
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 11:40:38 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/24 11:59:57 by hadufer          ###   ########.fr       */
+/*   Updated: 2021/06/24 16:54:03 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ int	ft_is_sort(int *tab, int length, int(*f)(int, int))
 			tmp = 1;
 			i++;
 		}
-		if ((f(tab[i], tab[i + 1]) < 0 && tmp > 0)
-			|| (f(tab[i], tab[i + 1]) > 0 && tmp < 0))
+		if ((i + 1 < length) && ((f(tab[i], tab[i + 1]) < 0 && tmp > 0)
+				|| (f(tab[i], tab[i + 1]) > 0 && tmp < 0)))
 			return (0);
 		i++;
 	}

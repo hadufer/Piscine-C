@@ -6,11 +6,9 @@
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 15:06:54 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/24 15:14:40 by hadufer          ###   ########.fr       */
+/*   Updated: 2021/06/24 16:38:07 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 int	ft_strlen(char *str)
 {
@@ -41,11 +39,6 @@ int	ft_strcmp(char *s1, char *s2)
 		tmp_2++;
 	}
 	return (*tmp_1 - *tmp_2);
-}
-
-void	ft_putstr(char *str)
-{
-	write(1, str, ft_strlen(str));
 }
 
 void	ft_sort_string_tab(char **tab)
