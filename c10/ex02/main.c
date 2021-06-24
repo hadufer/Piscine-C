@@ -6,7 +6,7 @@
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 10:06:29 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/23 19:32:58 by hadufer          ###   ########.fr       */
+/*   Updated: 2021/06/24 10:36:54 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,11 @@ int	main(int ac, char **av)
 {
 	int	i;
 	int	lines;
+	int	to_back_print;
 
 	i = 1;
 	lines = 0;
+	to_back_print = 0;
 	if (ac < 2)
 	{
 		while (1);
@@ -45,13 +47,15 @@ int	main(int ac, char **av)
 	{
 		if (i == 1)
 		{
-			if (check_option() == -1)
-				// Fonction qui gerre les erreurs ici
+			if (check_option(av) != -1)
+				to_back_print = check_option(av);
+			else
+				return (0);
 		}
 		if (ft_check_file(av[i]) == -1)
 			handle_error(av[i]);
 		lines = ft_count_line(av[i]);
-		ft_read_display_tail(av[i], lines);
+		ft_read_display_tail(av[i], lines, to_back_print);
 		i++;
 	}
 	return (0);

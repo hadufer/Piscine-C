@@ -1,16 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_file2.h                                    :+:      :+:    :+:   */
+/*   do_op.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/23 17:19:34 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/24 10:08:00 by hadufer          ###   ########.fr       */
+/*   Created: 2021/06/24 12:00:55 by hadufer           #+#    #+#             */
+/*   Updated: 2021/06/24 12:26:08 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_READ_FILE2_H
-# define FT_READ_FILE2_H
-int	check_option(char **av);
-#endif
+#include "do_op.h"
+
+long	add(long a, long b)
+{
+	return (a + b);
+}
+
+long	sub(long a, long b)
+{
+	return (a - b);
+}
+
+long	mul(long a, long b)
+{
+	return (a * b);
+}
+
+long	div(long a, long b)
+{
+	return (a / b);
+}
+
+long	mod(long a, long b)
+{
+	return (a % b);
+}

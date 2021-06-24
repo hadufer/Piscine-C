@@ -1,16 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_file2.h                                    :+:      :+:    :+:   */
+/*   ft_any.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/23 17:19:34 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/24 10:08:00 by hadufer          ###   ########.fr       */
+/*   Created: 2021/06/24 11:35:16 by hadufer           #+#    #+#             */
+/*   Updated: 2021/06/24 11:37:22 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_READ_FILE2_H
-# define FT_READ_FILE2_H
-int	check_option(char **av);
-#endif
+int	ft_any(char **tab, int(*f)(char*))
+{
+	int	i;
+
+	i = 0;
+	while (tab[i])
+	{
+		if (f(tab[i]) != 0)
+			return (1);
+		i++;
+	}
+	return (0);
+}

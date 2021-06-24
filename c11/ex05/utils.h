@@ -1,16 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read_file2.h                                    :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hadufer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/23 17:19:34 by hadufer           #+#    #+#             */
-/*   Updated: 2021/06/24 10:08:00 by hadufer          ###   ########.fr       */
+/*   Created: 2021/06/22 10:34:39 by hadufer           #+#    #+#             */
+/*   Updated: 2021/06/23 11:03:45 by hadufer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_READ_FILE2_H
-# define FT_READ_FILE2_H
-int	check_option(char **av);
+#ifndef UTILS_H
+# define UTILS_H
+void	ft_putchar(char c);
+void	ft_putstr(char *str, int out);
+int		ft_strcmp(char *s1, char *s2);
+int		ft_strlen(char *str);
 #endif
